@@ -1,6 +1,6 @@
 # Hastings
 
-> Give your documentation some grit.
+> Documentation with grit.
 
 ## Install
 
