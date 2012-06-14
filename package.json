@@ -1,17 +1,20 @@
 {
-  "author": "Michael Brooks <michael@michaelbrooks.ca> (http://michaelbrooks.ca)",
-  "name": "hastings",
-  "description": "Documentation with grit.",
-  "version": "0.0.1",
-  "homepage": "http://mwbrooks.github.com/hastings",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mwbrooks/hastings.git"
-  },
-  "engines": {
-    "node": "~0.6.10"
-  },
-  "dependencies": {},
-  "devDependencies": {},
-  "optionalDependencies": {}
+    "author": "Michael Brooks <michael@michaelbrooks.ca> (http://michaelbrooks.ca)",
+    "name": "hastings",
+    "description": "Documentation with grit.",
+    "version": "0.0.1",
+    "homepage": "http://mwbrooks.github.com/hastings",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mwbrooks/hastings.git"
+    },
+    "engines": {
+        "node": "~0.6.10"
+    },
+    "bin": {
+        "hastings": "./bin/hastings"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "optionalDependencies": {}
 }
