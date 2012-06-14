@@ -80,7 +80,7 @@ Live edit and preview of the documentation.
         => [2012-06-08 11:13am] serving build/doc/
         => [2012-06-08 11:13am] rendered doc/en/index.md
 
-By default, the documentation path is `doc/`. This can be overriden with
+By default, the documentation path is `doc/`. This can be overridden with
 `[path]`.
 
 The optional `[path]` can be a markdown file or directory. When a file is
