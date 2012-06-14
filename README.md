@@ -17,11 +17,9 @@
 
 ## Simple Usage
 
-    # build doc/ to build/doc/
+    # build files in doc/
     $ hastings
-
-    # build documentation/ to build/documentation/
-    $ hastings documentation/
+        => build/doc/
 
 ## Detailed Usage
 
@@ -83,7 +81,7 @@ Live edit and preview of the documentation.
         => [2012-06-08 11:13am] rendered doc/en/index.md
 
 By default, the documentation path is `doc/`. This can be overriden with
-`[path`].
+`[path]`.
 
 The optional `[path]` can be a markdown file or directory. When a file is
 specified, it is rendered to the the build path. When a directory is specified,
@@ -106,7 +104,8 @@ required.
 
 By default, the markdown documentation is stored is `doc/` and library files
 are stored in `lib/doc/`. You are welcome to change the documentation path to
-match your naming convention.
+match your naming convention but you will then need to specify the `path` to
+each command.
 
 ### $ hastings create _template_ _file_
 
@@ -123,7 +122,7 @@ bundled with hastings:
 
 The `file` argument is the file to be created.
 
-You are not required to use templates. Templates help you to write
+You are not required to use templates. Although, templates help you to write
 documentation quicker and more consistently.
 
 Custom templates can be added to `lib/doc/template/`. The
@@ -158,7 +157,7 @@ with the same name. For example, to override `guide` you can create the file
 
 You can add a custom HTML theme for your documentation.
 
-Add a HTML template to `lib/doc/theme/` and it will override the default theme.
+Add a HTML theme to `lib/doc/theme/` and it will override the default theme.
 When building your documentation, the entire theme directory is copied to
 `build/doc/`.
 
