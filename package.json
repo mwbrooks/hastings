@@ -8,11 +8,12 @@
         "type": "git",
         "url": "git://github.com/mwbrooks/hastings.git"
     },
-    "engines": {
-        "node": "~0.6.10"
-    },
+    "preferGlobal": "true",
     "bin": {
         "hastings": "./bin/hastings"
+    },
+    "engines": {
+        "node": "~0.6.10"
     },
     "dependencies": {},
     "devDependencies": {},
