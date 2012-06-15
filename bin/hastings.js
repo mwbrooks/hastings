@@ -9,6 +9,7 @@ var program = require('commander');
 /*
  * CLI version.
  */
+
 program.version('0.0.1');
 
 /*
@@ -57,6 +58,15 @@ program
         path = path || '.';
         console.log('hastings %s', path);
     });
+
+/*
+ * Edge-case for hastings [path]
+ * When no argument is provided, use a default path.
+ */
+
+if (process.argv.length < 3) {
+    process.argv.push('.');
+}
 
 /*
  * Command: hastings help
