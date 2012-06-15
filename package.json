@@ -8,6 +8,12 @@
         "type": "git",
         "url": "git://github.com/mwbrooks/hastings.git"
     },
+    "keywords": [
+        "docs",
+        "documentation",
+        "cli",
+        "generator"
+    ],
     "preferGlobal": "true",
     "bin": {
         "hastings": "./bin/hastings"
