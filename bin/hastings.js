@@ -59,11 +59,7 @@ program
         console.log('hastings %s', path);
     });
 
-/*
- * Edge-case for hastings [path]
- * When no argument is provided, use a default path.
- */
-
+// when no argument is provided, use a default path.
 if (process.argv.length < 3) {
     process.argv.push('.');
 }
