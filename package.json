@@ -16,7 +16,7 @@
     ],
     "preferGlobal": "true",
     "bin": {
-        "hastings": "./bin/hastings"
+        "hastings": "./bin/hastings.js"
     },
     "engines": {
         "node": "~0.6.10"
