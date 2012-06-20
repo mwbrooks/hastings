@@ -18,12 +18,18 @@
     "bin": {
         "hastings": "./bin/hastings.js"
     },
+    "scripts": {
+        "test": "./node_modules/.bin/mocha --reporter spec"
+    },
     "engines": {
         "node": "~0.6.10"
     },
     "dependencies": {
         "commander": "0.6.x"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "mocha": "1.2.x",
+        "should": "0.6.x"
+    },
     "optionalDependencies": {}
 }
