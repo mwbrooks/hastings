@@ -5,6 +5,7 @@
  */
 
 var program = require('commander');
+var hastings = require('./../lib/hastings');
 
 /*
  * CLI version.
@@ -22,7 +23,7 @@ program
     .action(function(path) {
         path = path || '';
         console.log('hastings init %s', path);
-        // hastings.init(path);
+        hastings.init(path);
     });
 
 /*
