@@ -14,18 +14,21 @@ describe('hastings', function() {
 
         describe('path', function() {
             it('should be optional', function() {
-                var path = hastings.init();
-                path.should.equal(basepath + '/doc');
+                hastings.init(null, function(e, path) {
+                    path.should.equal(basepath + '/doc');
+                });
             });
 
             it('should be used when provided', function() {
-                var path = hastings.init('docs');
-                path.should.equal(basepath + '/docs');
+                hastings.init('docs', function(e, path) {
+                    path.should.equal(basepath + '/docs');
+                });
             });
 
             it('should handle ./ as ./doc', function() {
-                var path = hastings.init('.');
-                path.should.equal(basepath + '/doc')
+                hastings.init('.', function(e, path) {
+                    path.should.equal(basepath + '/doc')
+                });
             });
         });
 
