@@ -48,21 +48,16 @@ describe('hastings', function() {
             hastings.should.have.property('init');
         });
 
-        it('should use an existing directory', function() {
-            // pre-create doc/ directory
-            fs.mkdirSync(tmpPath);
-            p.existsSync(tmpPath).should.equal(true);
-            // now feed it to hastings
+        it('should create missing directories and files', function() {
+            p.existsSync(tmpPath).should.equal(false);
             hastings.init('doc', function(e, path) {
                 fs.statSync(path).isDirectory().should.equal(true);
                 fs.statSync(indexPath).isFile().should.equal(true);
             });
         });
 
-        it('should create missing directories', function() {
-            // no pre-created doc/ directory
-            p.existsSync(tmpPath).should.equal(false);
-            // now create it
+        it('should use an existing directory', function() {
+            fs.mkdirSync(tmpPath);
             hastings.init('doc', function(e, path) {
                 fs.statSync(path).isDirectory().should.equal(true);
                 fs.statSync(indexPath).isFile().should.equal(true);
@@ -72,9 +67,6 @@ describe('hastings', function() {
         it('should not replace an existing index.md', function() {
             wrench.copyDirSyncRecursive('test/res/doc', 'doc');
             hastings.init('doc', function(e, path) {
-                fs.statSync(path).isDirectory().should.equal(true);
-                fs.statSync(indexPath).isFile().should.equal(true);
-
                 var expectedContent = fs.readFileSync('test/res/doc/index.md', 'utf-8');
                 var actualContent = fs.readFileSync('doc/index.md', 'utf-8');
                 actualContent.should.equal(expectedContent);
