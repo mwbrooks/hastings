@@ -12,30 +12,19 @@ describe('hastings', function() {
 
     describe('path', function() {
         it('should be optional', function() {
-            hastings.init(null, function(e, path) {
-                path.should.equal(basepath + '/doc');
-                fs.statSync(path).isDirectory().should.equal(true);
-            });
+            hastings.path(null).should.equal(basepath + '/doc');
         });
 
         it('should be used when provided', function() {
-            hastings.init('custom/docs', function(e, path) {
-                path.should.equal(basepath + '/custom/docs');
-                fs.statSync(path).isDirectory().should.equal(true);
-            });
+            hastings.path('custom/docs').should.equal(basepath + '/custom/docs');
         });
 
         it('should handle ./ as ./doc', function() {
-            hastings.init('.', function(e, path) {
-                path.should.equal(basepath + '/doc');
-                fs.statSync(path).isDirectory().should.equal(true);
-            });
+            hastings.path('.').should.equal(basepath + '/doc');
         });
 
         it('should be absolute path', function() {
-            hastings.init('.', function(e, path) {
-                path.should.equal(basepath + '/doc');
-            });
+            hastings.path('.').should.equal(basepath + '/doc');
         });
     });
 
