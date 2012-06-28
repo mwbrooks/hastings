@@ -21,9 +21,9 @@ program
     .command('init [path]')
     .description('setup docs in your project')
     .action(function(path) {
-        path = path || '';
-        console.log('hastings init %s', path);
-        hastings.init(path);
+        hastings.init(path, function(e, path) {
+            console.log('hastings init %s', path);
+        });
     });
 
 /*

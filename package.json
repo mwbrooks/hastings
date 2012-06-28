@@ -25,7 +25,8 @@
         "node": "~0.6.10"
     },
     "dependencies": {
-        "commander": "0.6.x"
+        "commander": "0.6.x",
+        "wrench": "*"
     },
     "devDependencies": {
         "mocha": "1.2.x",
