@@ -43,16 +43,25 @@ describe('hastings', function() {
             hastings.should.have.property('init');
         });
 
+        it('should return a list of created directories and files', function() {
+            hastings.init('doc', function(e, paths) {
+                paths.should.be.an.instanceOf(Array);
+                for(var i in paths) {
+                    help.exists(paths[i]).should.equal(true);
+                }
+            });
+        });
+
         it('should create missing directories and files', function() {
             help.exists('doc').should.equal(false);
-            hastings.init('doc', function(e, path) {
+            hastings.init('doc', function(e, paths) {
                 help.exists('doc/index.md').should.equal(true);
             });
         });
 
         it('should use an existing directory', function() {
             help.mkdir('doc');
-            hastings.init('doc', function(e, path) {
+            hastings.init('doc', function(e, paths) {
                 help.exists('doc/index.md').should.equal(true);
             });
         });
