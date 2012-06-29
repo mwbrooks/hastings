@@ -4,6 +4,7 @@ var basepath = require('path').resolve('.');
 var fs = require('fs');
 var p = require('path');
 var wrench = require('wrench');
+var help = require('./lib/test-helper');
 
 describe('hastings', function() {
     it('should exist', function() {
@@ -36,12 +37,10 @@ describe('hastings', function() {
         var tmpPath = p.join(basepath, 'doc');
         var indexPath = p.join(tmpPath, 'index.md');
         beforeEach(function() {
-            if (p.existsSync(tmpPath))
-                wrench.rmdirSyncRecursive(tmpPath);
+            help.cleanup();
         });
         afterEach(function() {
-            if (p.existsSync(tmpPath))
-                wrench.rmdirSyncRecursive(tmpPath);
+            help.cleanup();
         });
 
         it('should exist', function() {
