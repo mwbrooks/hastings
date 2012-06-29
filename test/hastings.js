@@ -1,9 +1,7 @@
 var should = require('should');
 var hastings = require('./../lib/hastings');
 var basepath = require('path').resolve('.');
-var fs = require('fs');
 var p = require('path');
-var wrench = require('wrench');
 var help = require('./lib/test-helper');
 
 describe('hastings', function() {
@@ -34,8 +32,6 @@ describe('hastings', function() {
     });
 
     describe('init', function() {
-        var tmpPath = p.join(basepath, 'doc');
-        var indexPath = p.join(tmpPath, 'index.md');
         beforeEach(function() {
             help.cleanup();
         });
@@ -48,25 +44,25 @@ describe('hastings', function() {
         });
 
         it('should create missing directories and files', function() {
-            p.existsSync('doc').should.equal(false);
+            help.exists('doc').should.equal(false);
             hastings.init('doc', function(e, path) {
-                p.existsSync('doc/index.md').should.equal(true);
+                help.exists('doc/index.md').should.equal(true);
             });
         });
 
         it('should use an existing directory', function() {
-            fs.mkdirSync(tmpPath);
+            help.mkdir('doc');
             hastings.init('doc', function(e, path) {
-                p.existsSync('doc/index.md').should.equal(true);
+                help.exists('doc/index.md').should.equal(true);
             });
         });
 
         it('should not replace an existing index.md', function() {
-            wrench.copyDirSyncRecursive('test/res/doc', 'doc');
+            help.setup(); // create a sample doc/ directory and content
             hastings.init('doc', function(e, path) {
-                var expectedContent = fs.readFileSync('test/res/doc/index.md', 'utf-8');
-                var actualContent = fs.readFileSync('doc/index.md', 'utf-8');
-                actualContent.should.equal(expectedContent);
+                var expect = help.content('test/res/doc/index.md');
+                var actual = help.content('doc/index.md');
+                actual.should.equal(expect);
             });
         });
     });
