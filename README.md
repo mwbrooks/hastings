@@ -1,4 +1,4 @@
-# Hastings
+# Hastings [![Build Status][travis-ci-img]][travis-ci-url]
 
 > Documentation with grit.
 
@@ -173,3 +173,7 @@ where you want the content of each markdown file to be inserted.
             ...
         </body>
     </html>
+
+[travis-ci-img]: https://secure.travis-ci.org/mwbrooks/hastings.png
+[travis-ci-url]: http://travis-ci.org/mwbrooks/hastings
+
