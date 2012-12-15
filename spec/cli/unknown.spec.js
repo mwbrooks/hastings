@@ -9,13 +9,13 @@ var CLI = require('../../lib/cli'),
  * Unknown command specification.
  */
 
-describe('$ phonegap-build unknown', function() {
+describe('$ hastings unknown', function() {
     beforeEach(function() {
         cli = new CLI();
         spyOn(process.stdout, 'write');
     });
 
-    describe('$ phonegap-build noop', function() {
+    describe('$ hastings noop', function() {
         it('should output the unknown command', function() {
             cli.argv({ _: ['noop'] });
             expect(process.stdout.write.mostRecentCall.args[0]).toMatch(/unknown/i);

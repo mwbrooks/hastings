@@ -1,6 +1,14 @@
+/*
+ * Module dependencies.
+ */
+
 var shell = require('shelljs'),
     path = require('path'),
     bin = 'node ' + path.resolve(path.join(__dirname, '..', 'bin', 'hastings'));
+
+/*
+ * CLI parsing specification.
+ */
 
 describe('$ hastings [options] commands', function() {
     beforeEach(function() {

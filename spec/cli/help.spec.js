@@ -9,34 +9,34 @@ var CLI = require('../../lib/cli'),
  * Help command specification.
  */
 
-describe('$ phonegap-build help', function() {
+describe('$ hastings help', function() {
     beforeEach(function() {
         cli = new CLI();
         spyOn(process.stdout, 'write');
     });
 
-    describe('$ phonegap-build', function() {
+    describe('$ hastings', function() {
         it('should output the usage information', function() {
             cli.argv({ _: [] });
             expect(process.stdout.write.mostRecentCall.args[0]).toMatch(/usage:/i);
         });
     });
 
-    describe('$ phonegap-build help', function() {
+    describe('$ hastings help', function() {
         it('should output the usage information', function() {
             cli.argv({ _: [ 'help' ] });
             expect(process.stdout.write.mostRecentCall.args[0]).toMatch(/usage:/i);
         });
     });
 
-    describe('$ phonegap-build --help', function() {
+    describe('$ hastings --help', function() {
         it('should output the usage information', function() {
             cli.argv({ _: [], help: true });
             expect(process.stdout.write.mostRecentCall.args[0]).toMatch(/usage:/i);
         });
     });
 
-    describe('$ phonegap-build -h', function() {
+    describe('$ hastings -h', function() {
         it('should output the usage information', function() {
             cli.argv({ _: [], h: true });
             expect(process.stdout.write.mostRecentCall.args[0]).toMatch(/usage:/i);
