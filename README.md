@@ -4,7 +4,7 @@
 
 ## Install
 
-    $ npm install hastings
+    $ npm install -g hastings
 
 ## Usage
 
@@ -17,9 +17,8 @@
 
 ## Simple Usage
 
-    # build files in doc/
-    $ hastings
-        => build/doc/
+    $ hastings README.md
+        => build/doc/README.html
 
 ## Detailed Usage
 
