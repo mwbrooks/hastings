@@ -1,7 +1,6 @@
 {
-    "author": "Michael Brooks <michael@michaelbrooks.ca>",
     "name": "hastings",
-    "description": "Documentation with grit.",
+    "description": "Generates documentation with grit.",
     "version": "0.0.1",
     "homepage": "http://mwbrooks.github.com/hastings",
     "repository": {
@@ -11,7 +10,6 @@
     "keywords": [
         "docs",
         "documentation",
-        "cli",
         "generator"
     ],
     "preferGlobal": "true",
@@ -22,7 +20,7 @@
         "test": "./node_modules/.bin/mocha --reporter spec --watch"
     },
     "engines": {
-        "node": "~0.6.10"
+        "node": ">=0.8.0"
     },
     "dependencies": {
         "commander": "0.6.x",
@@ -32,5 +30,11 @@
         "mocha": "1.2.x",
         "should": "0.6.x"
     },
-    "optionalDependencies": {}
+    "optionalDependencies": {
+    },
+    "contributors": [{
+        "name": "Michael Brooks",
+        "email": "michael@michaelbrooks.ca",
+        "url": "http://michaelbrooks.ca"
+    }]
 }
