@@ -17,18 +17,17 @@
         "hastings": "./bin/hastings.js"
     },
     "scripts": {
-        "test": "./node_modules/.bin/mocha --reporter spec --watch"
+        "test": "./node_modules/.bin/jasmine-node --color --verbose spec"
     },
     "engines": {
         "node": ">=0.8.0"
     },
     "dependencies": {
-        "commander": "0.6.x",
-        "wrench": "*"
+        "optimist": "0.3.x",
+        "shelljs": "0.0.x"
     },
     "devDependencies": {
-        "mocha": "1.2.x",
-        "should": "0.6.x"
+        "jasmine-node": "1.x.x"
     },
     "optionalDependencies": {
     },
