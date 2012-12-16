@@ -11,5 +11,4 @@ var CLI = require('../lib/cli');
  * Run the command-line client
  */
 
-var cli = new CLI().argv(argv, function() {
-});
+var cli = new CLI().argv(argv);

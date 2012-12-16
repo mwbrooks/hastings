@@ -8,65 +8,50 @@
 
 ## Usage
 
-    $ hastings [path] ................. output written to /build/doc/
-    $ hastings < path ................. output written to stdout
+### Commands
+
+    $ hastings build [path] ........... output html to build/doc/
     $ hastings watch [path] ........... build and watch for changes
-    $ hastings init [path] ............ initialize default doc files
-    $ hastings create template file ... create a template doc file
     $ hastings help ................... get help
 
-## Simple Usage
+### Example: Render a File
 
-    $ hastings README.md
+    $ hastings build README.md
         => build/doc/README.html
 
-## Detailed Usage
+### Example: Render a Directory
 
-    # initialize default doc file structure
-    $ hastings init
-        => mkdir doc/
-        => mkdir doc/en/
-        => touch doc/en/index.md
-        => mkdir lib/doc/
+    $ hastings build doc/
+        => build/doc/getting-started.md
 
-    # create a getting started guide
-    $ hastings create guide doc/en/getting-started.md
+## Example: Watch a Directory
 
-    # live preview of documentation
     $ hastings watch
         => [2012-06-08 11:13am] server started at 127.0.0.1:3000
         => [2012-06-08 11:13am] serving build/doc/
-        => [2012-06-08 11:13am] rendered doc/en/getting-started.md
+        => [2012-06-08 11:13am] rendered doc/getting-started.md
 
 ## Commands
 
-### $ hastings [path]
+### $ hastings build [path]
 
 Builds the HTML documentation and outputs the files.
 
-    $ hastings
-    $ hastings doc/
-    $ hastings documentation/
+    $ hastings build
+    $ hastings build doc/
+    $ hastings build documentation/
 
-By default, the documentation path is `doc/`. This can be overridden with
-`[path]`.
+By default, the documentation path is `doc/`. This can be changed by providing
+a `[path]`.
 
-The optional `[path]` can be a markdown file or directory. When a file is
+The optional `[path]` can be a single markdown file or directory. When a file is
 specified, it is rendered to the the build path. When a directory is specified,
 then the entire directory is copied to the build path and each markdown file
-is replaced with a HTML file.
+is replaced with a HTML file. The copy step allows assets to be included with
+the rendered HTML.
 
-The build output is stored in `build/doc`.
-
-### $ hastings < path
-
-Builds the HTML documentation and pipes output to the console.
-
-    $ hastings < doc/
-    $ hastings < documentation/
-        => [outputs a wad of HTML]
-
-The parameter `path` can be a markdown file or directory.
+The build output is stored in `build/doc`. This can be changed by providing
+the option `--output <path>`.
 
 ### $ hastings watch [path]
 
@@ -89,43 +74,6 @@ is replaced with a HTML file.
 
 The build output is stored in `build/doc` and can be viewed by opening a browser
 to `localhost:3000`.
-
-### $ hastings init [path]
-
-Initializes a default documentation file structure. This structure is not
-required.
-
-    $ hastings init
-        => mkdir doc/
-        => mkdir doc/en/
-        => touch doc/en/index.md
-        => mkdir lib/doc/
-
-By default, the markdown documentation is stored is `doc/` and library files
-are stored in `lib/doc/`. You are welcome to change the documentation path to
-match your naming convention but you will then need to specify the `path` to
-each command.
-
-### $ hastings create _template_ _file_
-
-Create a new document from a template.
-
-    $ hastings create guide doc/en/getting-started.md
-
-The `template` argument is the type of template to use. There are four templates
-bundled with hastings:
-  - `api`
-  - `guide`
-  - `trouble-shooting`
-  - `faq`
-
-The `file` argument is the file to be created.
-
-You are not required to use templates. Although, templates help you to write
-documentation quicker and more consistently.
-
-Custom templates can be added to `lib/doc/template/`. The
-[Customization](#customization) section explains templates in more detail.
 
 ### $ hastings help
 
