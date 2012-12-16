@@ -24,7 +24,7 @@
     $ hastings build doc/
         => build/doc/getting-started.md
 
-## Example: Watch a Directory
+### Example: Watch a Directory
 
     $ hastings watch
         => [2012-06-08 11:13am] server started at 127.0.0.1:3000
